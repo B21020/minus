@@ -29,7 +29,7 @@ public class Sample3AuthConfiguration {
             .logoutUrl("/logout")
             .logoutSuccessUrl("/"))
         .authorizeHttpRequests(authz -> authz
-            .requestMatchers(AntPathRequestMatcher.antMatcher("/**")).authenticated()
+            .requestMatchers(AntPathRequestMatcher.antMatcher("/sample3/**")).authenticated()
             .requestMatchers(AntPathRequestMatcher.antMatcher("/**")).permitAll()); // それ以外は全員アクセス可能
     return http.build();
   }
